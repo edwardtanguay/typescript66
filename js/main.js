@@ -5,6 +5,12 @@ var app = function () {
     // literal type
     var mainColor;
     mainColor = "green";
+    var score;
+    score = 55;
+    score = 'five';
+    if (typeof score === "string") {
+        score = "\"" + score + "\"";
+    }
     var rand = qmat_getRandomNumber(1, 2);
     if (rand === 1) {
         status = Status.Offline;
@@ -28,6 +34,8 @@ var app = function () {
     r += '<hr/>';
     r += dataReader.showFlaschard({ front: 'house', back: 'Haus' });
     r += dataReader.showFlaschard({ front: 'mouse', back: 'Maus' });
+    r += '<hr/>';
+    r += "The score is " + score + ".";
     return r;
 };
 // =========================================================

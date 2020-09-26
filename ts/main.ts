@@ -8,6 +8,15 @@ const app = () => {
 	let mainColor: 'navy' | 'green' | 'purple';
 	mainColor = "green";
 
+	// union type
+	type FlexibleScore = number | string;
+	let score: FlexibleScore;
+	score = 55;
+	score = 'five';
+	if (typeof score === "string") {
+		score = `"${score}"`;
+	}
+
 	let rand = qmat_getRandomNumber(1,2);
 	if (rand === 1) {
 		status = Status.Offline
@@ -34,6 +43,10 @@ const app = () => {
 
 	r += dataReader.showFlaschard({ front: 'house', back: 'Haus' });
 	r += dataReader.showFlaschard({ front: 'mouse', back: 'Maus' });
+
+	r += '<hr/>';
+
+	r += `The score is ${score}.`;
 
 	return r;
 };

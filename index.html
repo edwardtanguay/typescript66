@@ -10,13 +10,12 @@
 
 <body>
 	<div id="app">this is original text</div>
+	<script src="js/main.js"></script>
+	<script>
+		(function () {
+			document.getElementById('app').innerHTML = app();
+		}()); 
+	</script>
 </body>
-<script>
-	(function () {
-		var app = document.getElementById('app');
-		app.innerHTML = 'new text';
-	}()) ;
-
-</script>
 
 </html>

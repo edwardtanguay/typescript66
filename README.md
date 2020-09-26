@@ -20,8 +20,8 @@ Develop minimal HTML/JavaScript websites in Visual Studio with TypeScript, no We
 
 ## Development setup
 - Visual Studio Code
-- `tsc -w` (watches and transpiles TypeScript to JavaScript)
-- right-click *index.html`*, choose *Open with Live Server*
+- `tsc -w`  - *watches and transpiles TypeScript to JavaScript*
+- right-click **index.html**, choose **Open with Live Server**
 
 ## Current Developers
 

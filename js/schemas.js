@@ -1,4 +1,3 @@
-// TOUR: enums are easy to make
 var Status;
 (function (Status) {
     Status[Status["Online"] = 0] = "Online";

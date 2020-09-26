@@ -3,7 +3,7 @@ class Site {
 		return 'TypeScript/SASS Site';
 	}
 	get content() {
-		let r = '';
+		let r = ''; 
 
 		r += `<div style="padding: 10px;background-color:#ccc;margin-bottom:20px"><h3>Welcome developer:</h3><ul>
 		<li>this site is a learning and experimentation zone for TypeScript and SASS</li>
@@ -11,7 +11,7 @@ class Site {
 		<li>to develop it as a site of your own, see the <b>README.md</b> file</li>
 		</ul></div>`;
 
-		// enum
+		// TOUR: define an enum 
 		let status: Status = Status.Online;
 		const sdf = 34;
 

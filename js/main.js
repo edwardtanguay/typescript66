@@ -1,4 +1,4 @@
-var Site = /** @class */ (function () {
+var Site = (function () {
     function Site() {
     }
     Object.defineProperty(Site.prototype, "title", {
@@ -12,10 +12,8 @@ var Site = /** @class */ (function () {
         get: function () {
             var r = '';
             r += "<div style=\"padding: 10px;background-color:#ccc;margin-bottom:20px\"><h3>Welcome developer:</h3><ul>\n\t\t<li>this site is a learning and experimentation zone for TypeScript and SASS</li>\n\t\t<li>search for <code>// TOUR</code> to take a tour of highlights</li>\n\t\t<li>to develop it as a site of your own, see the <b>README.md</b> file</li>\n\t\t</ul></div>";
-            // enum
             var status = Status.Online;
             var sdf = 34;
-            // TOUR: literal types
             var mainColor;
             mainColor = 'green';
             var score;
@@ -31,7 +29,6 @@ var Site = /** @class */ (function () {
             else {
                 status = Status.Online;
             }
-            // TOUR: how to use an enum, works in intellisense
             if (status === Status.Offline) {
                 r += qstr.capitalizeFirstLetter('Status is offline.');
             }
@@ -57,7 +54,6 @@ var Site = /** @class */ (function () {
     });
     return Site;
 }());
-// === SITE LOADER AREA =================================
 var siteLoader = function (option) {
     if (option === void 0) { option = ''; }
     if (option === '') {
@@ -69,7 +65,7 @@ var siteLoader = function (option) {
         return site;
     }
 };
-var StartSite = /** @class */ (function () {
+var StartSite = (function () {
     function StartSite() {
     }
     Object.defineProperty(StartSite.prototype, "title", {
@@ -88,8 +84,7 @@ var StartSite = /** @class */ (function () {
     });
     return StartSite;
 }());
-// === QTOOLS ===================
-var qtools_qstr = /** @class */ (function () {
+var qtools_qstr = (function () {
     function qtools_qstr() {
     }
     qtools_qstr.prototype.capitalizeFirstLetter = function (line) {
@@ -97,7 +92,7 @@ var qtools_qstr = /** @class */ (function () {
     };
     return qtools_qstr;
 }());
-var qtools_qmat = /** @class */ (function () {
+var qtools_qmat = (function () {
     function qtools_qmat() {
     }
     qtools_qmat.prototype.getRandomNumber = function (start, end) {
@@ -107,8 +102,7 @@ var qtools_qmat = /** @class */ (function () {
 }());
 var qstr = new qtools_qstr();
 var qmat = new qtools_qmat();
-// === DATA ===================
-var DataReader = /** @class */ (function () {
+var DataReader = (function () {
     function DataReader() {
     }
     DataReader.prototype.getQuotes = function () {
@@ -120,11 +114,9 @@ var DataReader = /** @class */ (function () {
             'fifth one'
         ];
     };
-    // TOUR: define custom parameter type
     DataReader.prototype.showFlaschard = function (flashcard) {
         return "<div>" + flashcard.front + " <=> " + flashcard.back + "</div>";
     };
-    // TOUR: define return type
     DataReader.prototype.getFlashcard = function () {
         return {
             front: 'fff',

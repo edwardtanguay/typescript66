@@ -10,6 +10,7 @@ Develop minimal HTML/JavaScript websites in Visual Studio with TypeScript, no We
 
 **Characteristics:**
 - extremely small footprint
+- single-page application
 - TypeScript *(all in one file)*
 - no npm
 - no Webpack
@@ -22,9 +23,10 @@ Develop minimal HTML/JavaScript websites in Visual Studio with TypeScript, no We
 - open in Visual Studio Code
 - `tsc -w`  *(watches and transpiles TypeScript to JavaScript)*
 - right-click **index.html**, choose **Open with Live Server**
-- develop in `ts/main.ts` *(changes immediate appear in browser)*
+- develop in `ts/main.ts` *(changes immediately	 appear in browser)*
 
 ## Upcoming features
+- add Vue.js so it's templated
 - add SASS
 - add Bootstrap 4 (via CDN)
 - reponsive base site to develop in

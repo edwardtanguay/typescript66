@@ -1,11 +1,19 @@
 class Site {
-	get title() {
-		return 'TypeScript/SASS Site';
-	}
-	get content() {
-		let r = ''; 
 
-		r += `<div style="padding: 10px;background-color:#ccc;margin-bottom:20px"><h3>Welcome developer:</h3><ul>
+	_title;
+	_content;
+
+	get title() { return this._title; }
+	get content() { return this._content; }
+
+	constructor() {
+		this._title = 'TypeScript/SASS Site';
+		this._content = '';
+		this.buildContent();
+	}
+
+	buildContent() {
+		this._content += `<div style="padding: 10px;background-color:#ccc;margin-bottom:20px"><h3>Welcome developer:</h3><ul>
 		<li>this site is a learning and experimentation zone for TypeScript and SASS</li>
 		<li>search for <code>tour:</code> to take a tour of highlights</li>
 		<li>to use this it as a site of your own, see the <b>README.md</b> file</li>
@@ -37,29 +45,34 @@ class Site {
 
 		// TOUR: how to use an enum, works in intellisense
 		if (status === Status.Offline) {
-			r += qstr.capitalizeFirstLetter('Status is offline.');
+			this._content += qstr.capitalizeFirstLetter('Status is offline.');
 		} else {
-			r += qstr.capitalizeFirstLetter('Status is online.');
+			this._content += qstr.capitalizeFirstLetter('Status is online.');
 		}
 
-		r += '<hr/>';
+		this.addLine();
 
-		r += `<ul>`;
+		this._content += `<ul>`;
 		const dataSource = new DataSource();
 		dataSource.getQuotes().forEach((m) => {
-			r += `<li style="color: ${mainColor}">${m}</li>`;
+			this._content += `<li style="color: ${mainColor}">${m}</li>`;
 		});
-		r += `</ul>`;
+		this._content += `</ul>`;
 
-		r += '<hr/>';
+		this.addLine();
 
-		r += dataSource.showFlashcard({ front: 'house', back: 'Haus' });
-		r += dataSource.showFlashcard({ front: 'mouse', back: 'Maus' });
+		this._content += dataSource.showFlashcard({ front: 'house', back: 'Haus' });
+		this._content += dataSource.showFlashcard({ front: 'mouse', back: 'Maus' });
 
-		r += '<hr/>';
+		this.addLine();
 
-		r += `The score is ${score}.`;
+		this._content += `The score is ${score}.`;
 
-		return r;
+		this.addLine();
 	}
+
+	addLine() {
+		this._content += `<hr/>`;
+	}
+
 }

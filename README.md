@@ -32,7 +32,7 @@ Develop minimal single-page app in Visual Studio with TypeScript and SASS, but n
 - `npm run sass` *(watches and transpiles SASS to CSS)*
 - right-click **index.html**, choose **Open with Live Server** *(changes will now immediately appear in browser)*
 - in `index.html`, delete parameter from this line: `var site = siteLoader("deleteThisToDevelopSite");`
-- start developing in `ts/main.ts` and `scss/main.scss` 
+- start developing in `ts/site.ts` and `scss/main.scss` 
 
 ## Upcoming features
 - add Bootstrap 4 (via CDN)

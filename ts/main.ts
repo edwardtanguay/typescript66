@@ -30,6 +30,11 @@ const app = () => {
 	});
 	r += `</ul>`;
 
+	r += '<hr/>';
+
+	r += dataReader.showFlaschard({ front: 'house', back: 'Haus' });
+	r += dataReader.showFlaschard({ front: 'mouse', back: 'Maus' });
+
 	return r;
 };
 
@@ -48,6 +53,15 @@ enum Status {
     Offline
 }
 
+// interfaces
+interface IFlashcard {
+	front: string,
+	back: string
+	category?: string,
+	display?: () => string
+}
+
+// ES6 class
 class DataReader {
 	getQuotes() {
 		return [
@@ -57,5 +71,9 @@ class DataReader {
 			'fourth one', 
 			'fifth one'
 		];
+	}
+
+	showFlaschard(flashcard: IFlashcard) {
+		return `<div>${flashcard.front} <=> ${flashcard.back}</div>`;
 	}
 }

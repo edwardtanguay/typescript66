@@ -25,6 +25,9 @@ var app = function () {
         r += "<li style=\"color: " + mainColor + "\">" + m + "</li>";
     });
     r += "</ul>";
+    r += '<hr/>';
+    r += dataReader.showFlaschard({ front: 'house', back: 'Haus' });
+    r += dataReader.showFlaschard({ front: 'mouse', back: 'Maus' });
     return r;
 };
 // =========================================================
@@ -40,6 +43,7 @@ var Status;
     Status[Status["Online"] = 0] = "Online";
     Status[Status["Offline"] = 1] = "Offline";
 })(Status || (Status = {}));
+// ES6 class
 var DataReader = /** @class */ (function () {
     function DataReader() {
     }
@@ -51,6 +55,9 @@ var DataReader = /** @class */ (function () {
             'fourth one',
             'fifth one'
         ];
+    };
+    DataReader.prototype.showFlaschard = function (flashcard) {
+        return "<div>" + flashcard.front + " <=> " + flashcard.back + "</div>";
     };
     return DataReader;
 }());

@@ -56,6 +56,8 @@ var Site = (function () {
         this._addLine();
         this._content += "Number of quotes = " + this._quotes.length;
         this._addLine();
+        this._content += "The version of the dataSource is <code>" + DataSource.getVersion() + "</code>, retrieved from a static method.";
+        this._addLine();
     };
     Site.prototype._addLine = function () {
         this._content += "<hr/>";

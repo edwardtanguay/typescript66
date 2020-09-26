@@ -21,5 +21,8 @@ var DataSource = (function () {
             back: 'bbb'
         };
     };
+    DataSource.getVersion = function () {
+        return '0.0.1';
+    };
     return DataSource;
 }());

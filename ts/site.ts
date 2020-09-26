@@ -76,6 +76,10 @@ class Site {
 		this._content += `Number of quotes = ${this._quotes.length}`;
 
 		this._addLine();
+
+		this._content += `The version of the dataSource is <code>${DataSource.getVersion()}</code>, retrieved from a static method.`;
+
+		this._addLine();
 	}
 
 	_addLine(): void {

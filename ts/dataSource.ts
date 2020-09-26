@@ -23,4 +23,9 @@ class DataSource {
 			back: 'bbb'
 		};
 	}
+
+	// TOUR: static method
+	static getVersion(): string {
+		return '0.0.1';
+	}
 }

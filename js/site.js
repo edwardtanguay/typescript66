@@ -2,6 +2,7 @@ var Site = (function () {
     function Site() {
         this._title = 'TypeScript/SASS Site';
         this._content = '';
+        this._loadData();
         this.buildContent();
     }
     Object.defineProperty(Site.prototype, "title", {
@@ -40,22 +41,28 @@ var Site = (function () {
         else {
             this._content += qstr.capitalizeFirstLetter('Status is online.');
         }
-        this.addLine();
+        this._addLine();
         this._content += "<ul>";
         var dataSource = new DataSource();
-        dataSource.getQuotes().forEach(function (m) {
+        this._quotes.forEach(function (m) {
             _this._content += "<li style=\"color: " + mainColor + "\">" + m + "</li>";
         });
         this._content += "</ul>";
-        this.addLine();
+        this._addLine();
         this._content += dataSource.showFlashcard({ front: 'house', back: 'Haus' });
         this._content += dataSource.showFlashcard({ front: 'mouse', back: 'Maus' });
-        this.addLine();
+        this._addLine();
         this._content += "The score is " + score + ".";
-        this.addLine();
+        this._addLine();
+        this._content += "Number of quotes = " + this._quotes.length;
+        this._addLine();
     };
-    Site.prototype.addLine = function () {
+    Site.prototype._addLine = function () {
         this._content += "<hr/>";
+    };
+    Site.prototype._loadData = function () {
+        var dataSource = new DataSource();
+        this._quotes = dataSource.getQuotes();
     };
     return Site;
 }());

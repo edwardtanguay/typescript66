@@ -1,16 +1,18 @@
 class DataSource {
-	getQuotes() {
+	getQuotes(): string[] {
 		return [
 			'this one',
 			'that one',
 			'another one',
 			'fourth one',
-			'fifth one'
+			'fifth one',
+			'sixth',
+			'seven'
 		];
 	}
 
 	// TOUR: define custom parameter type
-	showFlashcard(flashcard: IFlashcard) {
+	showFlashcard(flashcard: IFlashcard):string {
 		return `<div>${flashcard.front} <=> ${flashcard.back}</div>`;
 	}
 

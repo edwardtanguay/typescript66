@@ -1,8 +1,9 @@
 class Site {
 
 	// TOUR: in TypeScript classes, you need to define private variables outside the constructor
-	_title: string;
-	_content: string;
+	private _title: string;
+	private _content: string;
+	private _quotes: string[];
 
 	get title() { return this._title; }
 	get content() { return this._content; }
@@ -10,6 +11,7 @@ class Site {
 	constructor() {
 		this._title = 'TypeScript/SASS Site';
 		this._content = '';
+		this._loadData();
 		this.buildContent();
 	}
 
@@ -41,7 +43,7 @@ class Site {
 		if (rand === 1) {
 			status = Status.Offline;
 		} else {
-			status = Status.Online;
+			status = Status.Online; 
 		}
 
 		// TOUR: how to use an enum, works in intellisense
@@ -51,29 +53,38 @@ class Site {
 			this._content += qstr.capitalizeFirstLetter('Status is online.');
 		}
 
-		this.addLine();
+		this._addLine();
 
 		this._content += `<ul>`;
 		const dataSource = new DataSource();
-		dataSource.getQuotes().forEach((m) => {
+		this._quotes.forEach((m) => {
 			this._content += `<li style="color: ${mainColor}">${m}</li>`;
 		});
 		this._content += `</ul>`;
 
-		this.addLine();
+		this._addLine();
 
 		this._content += dataSource.showFlashcard({ front: 'house', back: 'Haus' });
 		this._content += dataSource.showFlashcard({ front: 'mouse', back: 'Maus' });
 
-		this.addLine();
+		this._addLine();
 
 		this._content += `The score is ${score}.`;
 
-		this.addLine();
+		this._addLine();
+
+		this._content += `Number of quotes = ${this._quotes.length}`;
+
+		this._addLine();
 	}
 
-	addLine() {
+	_addLine() {
 		this._content += `<hr/>`;
+	}
+
+	_loadData() {
+		const dataSource = new DataSource();
+		this._quotes = dataSource.getQuotes();
 	}
 
 }

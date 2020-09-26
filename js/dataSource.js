@@ -7,7 +7,9 @@ var DataSource = (function () {
             'that one',
             'another one',
             'fourth one',
-            'fifth one'
+            'fifth one',
+            'sixth',
+            'seven'
         ];
     };
     DataSource.prototype.showFlashcard = function (flashcard) {

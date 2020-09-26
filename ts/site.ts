@@ -1,7 +1,8 @@
 class Site {
 
-	_title;
-	_content;
+	// TOUR: in TypeScript classes, you need to define private variables outside the constructor
+	_title: string;
+	_content: string;
 
 	get title() { return this._title; }
 	get content() { return this._content; }

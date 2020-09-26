@@ -25,7 +25,7 @@ Develop minimal HTML/JavaScript websites in Visual Studio with TypeScript, no We
 - `tsc -w`  *(watches and transpiles TypeScript to JavaScript)*
 - `node-sass --watch scss/main.scss css/main.css`
 - right-click **index.html**, choose **Open with Live Server**
-- develop in `ts/main.ts` *(changes immediately	 appear in browser)*
+- develop in `ts/main.ts` and `scss/main.scss` *(changes immediately appear in browser)*
 
 ## Upcoming features
 - add Vue.js so it's templated

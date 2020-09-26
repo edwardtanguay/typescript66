@@ -43,8 +43,8 @@ var Site = (function () {
             });
             r += "</ul>";
             r += '<hr/>';
-            r += dataReader.showFlaschard({ front: 'house', back: 'Haus' });
-            r += dataReader.showFlaschard({ front: 'mouse', back: 'Maus' });
+            r += dataReader.showFlashcard({ front: 'house', back: 'Haus' });
+            r += dataReader.showFlashcard({ front: 'mouse', back: 'Maus' });
             r += '<hr/>';
             r += "The score is " + score + ".";
             return r;
@@ -53,36 +53,6 @@ var Site = (function () {
         configurable: true
     });
     return Site;
-}());
-var siteLoader = function (option) {
-    if (option === void 0) { option = ''; }
-    if (option === '') {
-        var site = new Site();
-        return site;
-    }
-    else {
-        var site = new StartSite();
-        return site;
-    }
-};
-var StartSite = (function () {
-    function StartSite() {
-    }
-    Object.defineProperty(StartSite.prototype, "title", {
-        get: function () {
-            return 'Welcome';
-        },
-        enumerable: false,
-        configurable: true
-    });
-    Object.defineProperty(StartSite.prototype, "content", {
-        get: function () {
-            return 'Welcome to this site.';
-        },
-        enumerable: false,
-        configurable: true
-    });
-    return StartSite;
 }());
 var qtools_qstr = (function () {
     function qtools_qstr() {
@@ -114,7 +84,7 @@ var DataReader = (function () {
             'fifth one'
         ];
     };
-    DataReader.prototype.showFlaschard = function (flashcard) {
+    DataReader.prototype.showFlashcard = function (flashcard) {
         return "<div>" + flashcard.front + " <=> " + flashcard.back + "</div>";
     };
     DataReader.prototype.getFlashcard = function () {

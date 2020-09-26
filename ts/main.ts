@@ -53,35 +53,14 @@ class Site {
 
 		r += '<hr/>';
 
-		r += dataReader.showFlaschard({ front: 'house', back: 'Haus' });
-		r += dataReader.showFlaschard({ front: 'mouse', back: 'Maus' });
+		r += dataReader.showFlashcard({ front: 'house', back: 'Haus' });
+		r += dataReader.showFlashcard({ front: 'mouse', back: 'Maus' });
 
 		r += '<hr/>';
 
 		r += `The score is ${score}.`;
 
 		return r;
-	}
-}
-
-// === SITE LOADER AREA =================================
-
-const siteLoader = (option = '') => {
-	if (option === '') {
-		const site = new Site();
-		return site;
-	} else {
-		const site = new StartSite();
-		return site;
-	}
-};
-
-class StartSite {
-	get title() {
-		return 'Welcome';
-	}
-	get content() {
-		return 'Welcome to this site.';
 	}
 }
 
@@ -117,7 +96,7 @@ class DataReader {
 	}
 
 	// TOUR: define custom parameter type
-	showFlaschard(flashcard: IFlashcard) {
+	showFlashcard(flashcard: IFlashcard) {
 		return `<div>${flashcard.front} <=> ${flashcard.back}</div>`;
 	}
 

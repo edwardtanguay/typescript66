@@ -1,14 +1,11 @@
-class qtools_qstr {
-	capitalizeFirstLetter(line: string) {
+namespace qstr {
+	export function capitalizeFirstLetter(line: string) {
 		return line.charAt(0).toUpperCase() + line.slice(1);
 	}
 }
 
-class qtools_qmat {
-	getRandomNumber(start: number, end: number) {
+namespace qmat {
+	export function getRandomNumber(start: number, end: number) {
 		return Math.floor(Math.random() * end) + start;
 	}
 }
-
-const qstr = new qtools_qstr();
-const qmat = new qtools_qmat();

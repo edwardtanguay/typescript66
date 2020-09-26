@@ -18,7 +18,8 @@
 	<script src="js/site.js"></script>
 	<script>
 		(function () {
-			var site = siteLoader("deleteThisToDevelopSite");
+			// var site = siteLoader("deleteThisToDevelopSite");
+			var site = framework.siteLoader("");
 			document.getElementById('content').innerHTML = site.content;
 			document.getElementById('title').innerHTML = site.title;
 		}()); 

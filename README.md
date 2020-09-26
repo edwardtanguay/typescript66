@@ -17,6 +17,10 @@ Develop minimal single-page app in Visual Studio with TypeScript and SASS, but n
 - no JavaScript framework like Vue or React
 - no templating (send HTML as output)
 
+**Uses:**
+- learn and practice TypeScript and SASS
+- fast-loading, display-only, JSON-based data sites
+
 ## One-time setup
 - `npm install -g live-server`
 - `npm i -g typescript`

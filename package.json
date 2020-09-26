@@ -1,0 +1,21 @@
+{
+  "name": "typescript66",
+  "version": "1.0.0",
+  "description": "Develop minimal HTML/JavaScript websites in Visual Studio with TypeScript, no Webpack, no npm.",
+  "main": "index.js",
+  "scripts": {
+    "ts": "tsc -w",
+    "sass": "node-sass --watch scss/main.scss css/main.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/edwardtanguay/typescript66.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/edwardtanguay/typescript66/issues"
+  },
+  "homepage": "https://github.com/edwardtanguay/typescript66#readme"
+}

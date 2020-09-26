@@ -22,8 +22,8 @@ Develop minimal HTML/JavaScript websites in Visual Studio with TypeScript, no We
 
 ## Develop session
 - open in Visual Studio Code
-- `tsc -w`  *(watches and transpiles TypeScript to JavaScript)*
-- `node-sass --watch scss/main.scss css/main.css`
+- `npm run ts` *(watches and transpiles TypeScript to JavaScript)*
+- `npm run sass` *(watches and transpiles SASS to CSS)*
 - right-click **index.html**, choose **Open with Live Server**
 - develop in `ts/main.ts` and `scss/main.scss` *(changes immediately appear in browser)*
 

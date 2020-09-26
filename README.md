@@ -11,7 +11,9 @@ Develop minimal single-page app in Visual Studio with TypeScript and SASS, but n
 **Characteristics:**
 - extremely small footprint
 - single-page application
-- TypeScript *(all in one file)*
+- TypeScript
+- SASS
+- no web server required, can run as file in browser
 - no npm
 - no Webpack
 - no JavaScript framework like Vue or React

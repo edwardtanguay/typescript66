@@ -15,7 +15,7 @@ class Site {
 		this.buildContent();
 	}
 
-	buildContent() {
+	buildContent(): void {
 		this._content += `<div style="padding: 10px;background-color:#ccc;margin-bottom:20px"><h3>Welcome developer:</h3><ul>
 		<li>this site is a learning and experimentation zone for TypeScript and SASS</li>
 		<li>search for <code>tour:</code> to take a tour of highlights</li>
@@ -78,11 +78,11 @@ class Site {
 		this._addLine();
 	}
 
-	_addLine() {
+	_addLine(): void {
 		this._content += `<hr/>`;
 	}
 
-	_loadData() {
+	_loadData(): void {
 		const dataSource = new DataSource();
 		this._quotes = dataSource.getQuotes();
 	}

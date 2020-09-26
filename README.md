@@ -26,8 +26,9 @@ Develop minimal HTML/JavaScript websites in Visual Studio with TypeScript, no We
 - open in Visual Studio Code
 - `npm run ts` *(watches and transpiles TypeScript to JavaScript)*
 - `npm run sass` *(watches and transpiles SASS to CSS)*
-- right-click **index.html**, choose **Open with Live Server**
-- develop in `ts/main.ts` and `scss/main.scss` *(changes immediately appear in browser)*
+- right-click **index.html**, choose **Open with Live Server** *(changes will now immediately appear in browser)*
+- in `index.html`, delete parameter from this line: `var site = siteLoader("deleteThisToDevelopSite");`
+- start developing in `ts/main.ts` and `scss/main.scss` 
 
 ## Upcoming features
 - add Vue.js so it's templated

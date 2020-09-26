@@ -5,21 +5,10 @@ class Site {
 	get content() {
 		let r = '';
 
-		// === INTERFACES ===================
-
-		interface IFlashcard {
-			front: string;
-			back: string;
-			category?: string;
-			display?: () => string;
-		}
-
-		// === ENUMS ===================
-
-		enum Status {
-			Online,
-			Offline
-		}
+		r += `<div style="padding: 10px;background-color:#ccc;margin-bottom:20px"><h3>Welcome developer:</h3><ul>
+		<li>this site is a learning and experimentation zone for TypeScript and SASS</li>
+		<li>to develop it as a site of your own, see the <b>README.md</b> file</li>
+		</ul></div>`;
 
 		// enum
 		let status: Status = Status.Online;
@@ -103,14 +92,30 @@ class qtools_qstr {
 }
 
 class qtools_qmat {
-	getRandomNumber = (start: number, end: number) {
+	getRandomNumber(start: number, end: number) {
 		return Math.floor(Math.random() * end) + start;
 	}
 }
+
 const qstr = new qtools_qstr();
 const qmat = new qtools_qmat();
 
-// === DATA SOURCE ===================
+
+// === SCHEMA ========================
+
+interface IFlashcard {
+	front: string;
+	back: string;
+	category?: string;
+	display?: () => string;
+}
+
+enum Status {
+	Online,
+	Offline
+}
+
+// === DATA ===================
 
 class DataReader {
 	getQuotes() {

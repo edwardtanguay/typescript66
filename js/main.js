@@ -11,12 +11,7 @@ var Site = /** @class */ (function () {
     Object.defineProperty(Site.prototype, "content", {
         get: function () {
             var r = '';
-            // === ENUMS ===================
-            var Status;
-            (function (Status) {
-                Status[Status["Online"] = 0] = "Online";
-                Status[Status["Offline"] = 1] = "Offline";
-            })(Status || (Status = {}));
+            r += "<div style=\"padding: 10px;background-color:#ccc;margin-bottom:20px\"><h3>Welcome developer:</h3><ul>\n\t\t<li>this site is a learning and experimentation zone for TypeScript and SASS</li>\n\t\t<li>to develop it as a site of your own, see the <b>README.md</b> file</li>\n\t\t</ul></div>";
             // enum
             var status = Status.Online;
             var sdf = 34;
@@ -103,15 +98,20 @@ var qtools_qstr = /** @class */ (function () {
 }());
 var qtools_qmat = /** @class */ (function () {
     function qtools_qmat() {
-        this.getRandomNumber = function (start, end) {
-            return Math.floor(Math.random() * end) + start;
-        };
     }
+    qtools_qmat.prototype.getRandomNumber = function (start, end) {
+        return Math.floor(Math.random() * end) + start;
+    };
     return qtools_qmat;
 }());
 var qstr = new qtools_qstr();
 var qmat = new qtools_qmat();
-// === DATA SOURCE ===================
+var Status;
+(function (Status) {
+    Status[Status["Online"] = 0] = "Online";
+    Status[Status["Offline"] = 1] = "Offline";
+})(Status || (Status = {}));
+// === DATA ===================
 var DataReader = /** @class */ (function () {
     function DataReader() {
     }

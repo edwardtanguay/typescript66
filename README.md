@@ -14,6 +14,8 @@ Develop minimal HTML/JavaScript websites in Visual Studio with TypeScript, no We
 - TypeScript *(all in one file)*
 - no npm
 - no Webpack
+- no JavaScript framework like Vue or React
+- no templating (send HTML as output)
 
 ## One-time setup
 - `npm install -g live-server`

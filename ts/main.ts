@@ -1,6 +1,12 @@
 const app = () => { 
 	let r = '';
+
+	// enum
 	let status: Status = Status.Online;
+
+	// literal type
+	let mainColor: 'navy' | 'green' | 'purple';
+	mainColor = "green";
 
 	let rand = qmat_getRandomNumber(1,2);
 	if (rand === 1) {
@@ -20,7 +26,7 @@ const app = () => {
 	r += `<ul>`;
 	const dataReader = new DataReader();
 	dataReader.getQuotes().forEach(m => {
-		r += `<li>${m}</li>`;
+		r += `<li style="color: ${mainColor}">${m}</li>`;
 	});
 	r += `</ul>`;
 
@@ -36,6 +42,7 @@ const qmat_getRandomNumber = (start:number, end:number) => {
 	return Math.floor(Math.random() * end) + start;
 };
 
+// enum
 enum Status {
     Online,
     Offline

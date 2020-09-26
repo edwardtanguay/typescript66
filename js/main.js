@@ -1,6 +1,10 @@
 var app = function () {
     var r = '';
+    // enum
     var status = Status.Online;
+    // literal type
+    var mainColor;
+    mainColor = "green";
     var rand = qmat_getRandomNumber(1, 2);
     if (rand === 1) {
         status = Status.Offline;
@@ -18,7 +22,7 @@ var app = function () {
     r += "<ul>";
     var dataReader = new DataReader();
     dataReader.getQuotes().forEach(function (m) {
-        r += "<li>" + m + "</li>";
+        r += "<li style=\"color: " + mainColor + "\">" + m + "</li>";
     });
     r += "</ul>";
     return r;
@@ -30,6 +34,7 @@ var qstr_capitalizeFirstLetter = function (line) {
 var qmat_getRandomNumber = function (start, end) {
     return Math.floor(Math.random() * end) + start;
 };
+// enum
 var Status;
 (function (Status) {
     Status[Status["Online"] = 0] = "Online";

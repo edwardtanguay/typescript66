@@ -7,8 +7,8 @@ class Site {
 
 		r += `<div style="padding: 10px;background-color:#ccc;margin-bottom:20px"><h3>Welcome developer:</h3><ul>
 		<li>this site is a learning and experimentation zone for TypeScript and SASS</li>
-		<li>search for <code>// TOUR</code> to take a tour of highlights</li>
-		<li>to develop it as a site of your own, see the <b>README.md</b> file</li>
+		<li>search for <code>tour:</code> to take a tour of highlights</li>
+		<li>to use this it as a site of your own, see the <b>README.md</b> file</li>
 		</ul></div>`;
 
 		// TOUR: define an enum 
@@ -16,8 +16,8 @@ class Site {
 		const sdf = 34;
 
 		// TOUR: literal types
-		let mainColor: 'navy' | 'green' | 'purple';
-		mainColor = 'green';
+		let mainColor: 'navy' | 'brown' | 'purple';
+		mainColor = 'brown';
 
 		// TOUR: union type, can be either type
 		type FlexibleScore = number | string;
@@ -45,48 +45,21 @@ class Site {
 		r += '<hr/>';
 
 		r += `<ul>`;
-		const dataReader = new DataReader();
-		dataReader.getQuotes().forEach((m) => {
+		const dataSource = new DataSource();
+		dataSource.getQuotes().forEach((m) => {
 			r += `<li style="color: ${mainColor}">${m}</li>`;
 		});
 		r += `</ul>`;
 
 		r += '<hr/>';
 
-		r += dataReader.showFlashcard({ front: 'house', back: 'Haus' });
-		r += dataReader.showFlashcard({ front: 'mouse', back: 'Maus' });
+		r += dataSource.showFlashcard({ front: 'house', back: 'Haus' });
+		r += dataSource.showFlashcard({ front: 'mouse', back: 'Maus' });
 
 		r += '<hr/>';
 
 		r += `The score is ${score}.`;
 
 		return r;
-	}
-}
-
-// === DATA ===================
-
-class DataReader {
-	getQuotes() {
-		return [
-			'this one',
-			'that one',
-			'another one',
-			'fourth one',
-			'fifth one'
-		];
-	}
-
-	// TOUR: define custom parameter type
-	showFlashcard(flashcard: IFlashcard) {
-		return `<div>${flashcard.front} <=> ${flashcard.back}</div>`;
-	}
-
-	// TOUR: define return type
-	getFlashcard(): IFlashcard { 
-		return {
-			front: 'fff',
-			back: 'bbb'
-		};
 	}
 }

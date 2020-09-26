@@ -22,7 +22,7 @@ Develop minimal HTML/JavaScript websites in Visual Studio with TypeScript, no We
 - `npm i -g typescript`
 - `npm i -g node-sass`
 
-## Develop session
+## Start developing
 - open in Visual Studio Code
 - `npm run ts` *(watches and transpiles TypeScript to JavaScript)*
 - `npm run sass` *(watches and transpiles SASS to CSS)*

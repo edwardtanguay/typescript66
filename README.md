@@ -31,10 +31,9 @@ Develop minimal HTML/JavaScript websites in Visual Studio with TypeScript, no We
 - start developing in `ts/main.ts` and `scss/main.scss` 
 
 ## Upcoming features
-- add Vue.js so it's templated
-- add SASS
 - add Bootstrap 4 (via CDN)
-- reponsive base site to develop in
+- add Vue.js for interaction
+- make site responsive by default
 
 ## Current Developers
 

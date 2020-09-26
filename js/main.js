@@ -43,7 +43,8 @@ var DataReader = /** @class */ (function () {
             'this one',
             'that one',
             'another one',
-            'fourth one'
+			'fourth one',
+			'fifth one'
         ];
     };
     return DataReader;

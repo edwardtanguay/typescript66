@@ -1,4 +1,4 @@
-const app = () => { 
+const siteLoader = () => { 
 	let r = '';
 
 	// enum
@@ -48,7 +48,10 @@ const app = () => {
 
 	r += `The score is ${score}.`;
 
-	return r;
+	//return r;
+
+	const site = new Site();
+	return site;
 };
 
 // =========================================================
@@ -74,7 +77,17 @@ interface IFlashcard {
 	display?: () => string
 }
 
-// ES6 class
+// ES6 classes
+
+class Site {
+    get title() {
+        return 'the title';
+    }
+    get content() {
+        return 'content';
+    }
+}
+
 class DataReader {
 	getQuotes() {
 		return [

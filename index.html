@@ -6,15 +6,17 @@
 	<meta name="viewport"
 		  content="width=device-width, initial-scale=1.0">
 		  <link rel="stylesheet" href="css/main.css">
-	<title>Welcome</title>
+	<title id="title"></title>
 </head>
 
 <body>
-	<div id="app">this is original text</div>
+	<div id="content">this is original text</div>
 	<script src="js/main.js"></script>
 	<script>
 		(function () {
-			document.getElementById('app').innerHTML = app();
+			var site = siteLoader();
+			document.getElementById('content').innerHTML = site.content;
+			document.getElementById('title').innerHTML = site.title;
 		}()); 
 	</script>
 </body>

@@ -1,4 +1,4 @@
-var app = function () {
+var siteLoader = function () {
     var r = '';
     // enum
     var status = Status.Online;
@@ -36,7 +36,9 @@ var app = function () {
     r += dataReader.showFlaschard({ front: 'mouse', back: 'Maus' });
     r += '<hr/>';
     r += "The score is " + score + ".";
-    return r;
+    //return r;
+    var site = new Site();
+    return site;
 };
 // =========================================================
 var qstr_capitalizeFirstLetter = function (line) {
@@ -51,7 +53,26 @@ var Status;
     Status[Status["Online"] = 0] = "Online";
     Status[Status["Offline"] = 1] = "Offline";
 })(Status || (Status = {}));
-// ES6 class
+// ES6 classes
+var Site = /** @class */ (function () {
+    function Site() {
+    }
+    Object.defineProperty(Site.prototype, "title", {
+        get: function () {
+            return 'the title';
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(Site.prototype, "content", {
+        get: function () {
+            return 'content';
+        },
+        enumerable: false,
+        configurable: true
+    });
+    return Site;
+}());
 var DataReader = /** @class */ (function () {
     function DataReader() {
     }

@@ -11,11 +11,11 @@ var Site = /** @class */ (function () {
     Object.defineProperty(Site.prototype, "content", {
         get: function () {
             var r = '';
-            r += "<div style=\"padding: 10px;background-color:#ccc;margin-bottom:20px\"><h3>Welcome developer:</h3><ul>\n\t\t<li>this site is a learning and experimentation zone for TypeScript and SASS</li>\n\t\t<li>search for <b>// NOTE</b> to take a tour of highlights</li>\n\t\t<li>to develop it as a site of your own, see the <b>README.md</b> file</li>\n\t\t</ul></div>";
+            r += "<div style=\"padding: 10px;background-color:#ccc;margin-bottom:20px\"><h3>Welcome developer:</h3><ul>\n\t\t<li>this site is a learning and experimentation zone for TypeScript and SASS</li>\n\t\t<li>search for <code>// TOUR</code> to take a tour of highlights</li>\n\t\t<li>to develop it as a site of your own, see the <b>README.md</b> file</li>\n\t\t</ul></div>";
             // enum
             var status = Status.Online;
             var sdf = 34;
-            // NOTE: literal types
+            // TOUR: literal types
             var mainColor;
             mainColor = 'green';
             var score;
@@ -31,7 +31,7 @@ var Site = /** @class */ (function () {
             else {
                 status = Status.Online;
             }
-            // NOTE: how to use an enum, works in intellisense
+            // TOUR: how to use an enum, works in intellisense
             if (status === Status.Offline) {
                 r += qstr.capitalizeFirstLetter('Status is offline.');
             }
@@ -107,12 +107,6 @@ var qtools_qmat = /** @class */ (function () {
 }());
 var qstr = new qtools_qstr();
 var qmat = new qtools_qmat();
-// NOTE: enums are easy to make
-var Status;
-(function (Status) {
-    Status[Status["Online"] = 0] = "Online";
-    Status[Status["Offline"] = 1] = "Offline";
-})(Status || (Status = {}));
 // === DATA ===================
 var DataReader = /** @class */ (function () {
     function DataReader() {
@@ -126,11 +120,11 @@ var DataReader = /** @class */ (function () {
             'fifth one'
         ];
     };
-    // NOTE: define custom parameter type
+    // TOUR: define custom parameter type
     DataReader.prototype.showFlaschard = function (flashcard) {
         return "<div>" + flashcard.front + " <=> " + flashcard.back + "</div>";
     };
-    // NOTE: define return type
+    // TOUR: define return type
     DataReader.prototype.getFlashcard = function () {
         return {
             front: 'fff',

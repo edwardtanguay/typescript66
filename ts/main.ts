@@ -7,7 +7,7 @@ class Site {
 
 		r += `<div style="padding: 10px;background-color:#ccc;margin-bottom:20px"><h3>Welcome developer:</h3><ul>
 		<li>this site is a learning and experimentation zone for TypeScript and SASS</li>
-		<li>search for <b>// NOTE</b> to take a tour of highlights</li>
+		<li>search for <code>// TOUR</code> to take a tour of highlights</li>
 		<li>to develop it as a site of your own, see the <b>README.md</b> file</li>
 		</ul></div>`;
 
@@ -15,11 +15,11 @@ class Site {
 		let status: Status = Status.Online;
 		const sdf = 34;
 
-		// NOTE: literal types
+		// TOUR: literal types
 		let mainColor: 'navy' | 'green' | 'purple';
 		mainColor = 'green';
 
-		// NOTE: union type, can be either type
+		// TOUR: union type, can be either type
 		type FlexibleScore = number | string;
 		let score: FlexibleScore;
 		score = 55;
@@ -35,7 +35,7 @@ class Site {
 			status = Status.Online;
 		}
 
-		// NOTE: how to use an enum, works in intellisense
+		// TOUR: how to use an enum, works in intellisense
 		if (status === Status.Offline) {
 			r += qstr.capitalizeFirstLetter('Status is offline.');
 		} else {
@@ -103,22 +103,6 @@ const qstr = new qtools_qstr();
 const qmat = new qtools_qmat();
 
 
-// === SCHEMA ========================
-
-// NOTE: interfaces are easy to make
-interface IFlashcard {
-	front: string;
-	back: string;
-	category?: string;
-	display?: () => string;
-}
-
-// NOTE: enums are easy to make
-enum Status {
-	Online,
-	Offline
-}
-
 // === DATA ===================
 
 class DataReader {
@@ -132,12 +116,12 @@ class DataReader {
 		];
 	}
 
-	// NOTE: define custom parameter type
+	// TOUR: define custom parameter type
 	showFlaschard(flashcard: IFlashcard) {
 		return `<div>${flashcard.front} <=> ${flashcard.back}</div>`;
 	}
 
-	// NOTE: define return type
+	// TOUR: define return type
 	getFlashcard(): IFlashcard { 
 		return {
 			front: 'fff',

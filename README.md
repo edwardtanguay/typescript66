@@ -1,6 +1,6 @@
 # typescript66
 
-Develop minimal HTML/JavaScript websites in Visual Studio with TypeScript, no Webpack, no npm.
+Develop minimal single-page app in Visual Studio with TypeScript and SASS, but not complicated Webpack, etc.
 
 **Technologies:**
 

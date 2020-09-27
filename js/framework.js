@@ -31,4 +31,23 @@ var framework;
         return StartSite;
     }());
     framework.StartSite = StartSite;
+    var KeyValuePair = (function () {
+        function KeyValuePair(key, value) {
+            this.key = key;
+            this.value = value;
+        }
+        return KeyValuePair;
+    }());
+    framework.KeyValuePair = KeyValuePair;
+    var Person = (function () {
+        function Person(_firstName, _lastName) {
+            this._firstName = _firstName;
+            this._lastName = _lastName;
+        }
+        Person.prototype.display = function () {
+            return "PERSON: \"" + this._lastName + ", " + this._firstName + "\"";
+        };
+        return Person;
+    }());
+    framework.Person = Person;
 })(framework || (framework = {}));

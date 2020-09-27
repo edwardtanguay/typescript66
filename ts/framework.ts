@@ -20,6 +20,19 @@ namespace framework {
 		}
 	}
 
-	
+	export class KeyValuePair<TKey, TValue> {
+		constructor(
+			public key: TKey,
+			public value: TValue
+		) {}
+	}
+
+	// TOUR: private/public constructor parameters
+	export class Person {
+		constructor(public _firstName: string, private _lastName: string) { }
+		display(): string {
+			return `PERSON: "${this._lastName}, ${this._firstName}"`;
+		}
+	}
 
 }

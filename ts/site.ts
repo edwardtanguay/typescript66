@@ -125,6 +125,12 @@ namespace app {
 			this._addToContent(numbers2.reverse().join('-'));
 			this._addSeparator();
 
+			// TOUR: private/public constructor parameters
+			const person = new framework.Person('Pierre', 'Bayle');
+			person._firstName = '(unknown)';
+			// person._lastName = '(unknown)'; // typescript warns that this is a private variable
+			this._addToContent(person.display());
+
 			// generics key/value
 			console.log(Date.now()); 
 		}

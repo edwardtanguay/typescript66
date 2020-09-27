@@ -85,6 +85,9 @@ var app;
             this._addToContent(numbers.join('|'));
             this._addToContent(numbers2.reverse().join('-'));
             this._addSeparator();
+            var person = new framework.Person('Pierre', 'Bayle');
+            person._firstName = '(unknown)';
+            this._addToContent(person.display());
             console.log(Date.now());
         };
         Site.prototype._addSeparator = function () {

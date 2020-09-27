@@ -18,11 +18,11 @@ namespace app {
 		}
 
 		buildContent(): void {
-			this._content += `<div style="padding: 10px;background-color:#ccc;margin-bottom:20px"><h3>Welcome developer:</h3><ul>
+			this._addToContent(`<div style="padding: 10px;background-color:#ccc;margin-bottom:20px"><h3>Welcome developer:</h3><ul>
 		<li>this site is a learning and experimentation zone for TypeScript and SASS</li>
 		<li>search for <code>tour:</code> to take a tour of highlights</li>
 		<li>to use this it as a site of your own, see the <b>README.md</b> file</li>
-		</ul></div>`;
+		</ul></div>`);
 
 			// TOUR: define an enum 
 			let status: Status = Status.Online;
@@ -67,36 +67,36 @@ namespace app {
 
 			// TOUR: how to use an enum, works in intellisense
 			if (status === Status.Offline) {
-				this._content += qstr.capitalizeFirstLetter('Status is offline.');
+				this._addToContent(qstr.capitalizeFirstLetter('Status is offline.'));
 			} else {
-				this._content += qstr.capitalizeFirstLetter('Status is online.');
+				this._addToContent(qstr.capitalizeFirstLetter('Status is online.'));
 			}
 
 			this._addSeparator();
 
-			this._content += `<ul>`;
+			this._addToContent(`<ul>`, true);
 			const dataSource = new DataSource();
 			this._quotes.forEach((m) => {
-				this._content += `<li style="color: ${mainColor}">${m}</li>`;
+				this._addToContent(`<li style="color: ${mainColor}">${m}</li>`, true);
 			});
-			this._content += `</ul>`;
+			this._addToContent(`</ul>`);
 
 			this._addSeparator();
 
-			this._content += dataSource.showFlashcard({ front: 'house', back: 'Haus' });
-			this._content += dataSource.showFlashcard({ front: 'mouse', back: 'Maus' });
+			this._addToContent(dataSource.showFlashcard({ front: 'house', back: 'Haus' }));
+			this._addToContent(dataSource.showFlashcard({ front: 'mouse', back: 'Maus' }));
 
 			this._addSeparator();
 
-			this._content += `The score is ${score}.`;
+			this._addToContent(`The score is ${score}.`);
 
 			this._addSeparator();
 
-			this._content += `Number of quotes = ${this._quotes.length}`;
+			this._addToContent(`Number of quotes = ${this._quotes.length}`);
 
 			this._addSeparator();
 
-			this._content += `The version of the dataSource is <code>${DataSource.getVersion()}</code>, retrieved from a static method.`;
+			this._addToContent(`The version of the dataSource is <code>${DataSource.getVersion()}</code>, retrieved from a static method.`);
 
 			this._addSeparator();
 
@@ -107,25 +107,31 @@ namespace app {
 			}
 			const obj2 = qobj.clone(obj1);
 			obj2.firstName = '(unknown)';
-			this._content += `<div>obj1.firstName = "${obj1.firstName}"</div>`;
-			this._content += `<div>obj2.firstName = "${obj2.firstName}"</div>`;
+			this._addToContent(`obj1.firstName = "${obj1.firstName}"`);
+			this._addToContent(`obj2.firstName = "${obj2.firstName}"`);
 
 			// TOUR: using function with generics
 			const name = 'Andy';
 			const name2 = qobj.clone(name);
-			this._content += `<div>obj1.firstName = "${name}"</div>`;
-			this._content += `<div>obj2.firstName = "${name2}"</div>`;
+			this._addToContent(`obj1.firstName = "${name}"`);
+			this._addToContent(`obj2.firstName = "${name2}"`);
 
 			this._addSeparator();
 
 			// generic classes
-			this._content += `<div>obj2.firstName = "${name2}"</div>`;
-
+			this._addToContent('test');
 			this._addSeparator();
 		}
 
 		_addSeparator(): void {
 			this._content += `<hr/>`;
+		}
+		_addToContent(line: string, suppressDiv: boolean = false): void {
+			if (suppressDiv) {
+				this._content += `${line}`;
+			} else {
+				this._content += `<div>${line}</div>`;
+			}
 		}
 
 		_loadData(): void {

@@ -47,7 +47,7 @@ namespace framework {
 	}
 
 	// TOUR: contraining generics
-	export function totalLength(x: { length: number }, y: { length: number }): number {
+	export function totalLength<T extends { length: number}>(x: T, y: T): number {
 		var total: number = x.length + y.length;
 		return total;
 	}

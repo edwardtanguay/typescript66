@@ -120,7 +120,7 @@ namespace app {
 
 			// TOUR: an array is actually a generic class
 			const numbers: number[] = [1, 2, 3, 4];
-			const numbers2: Array<number> = [5,6,7,8];
+			const numbers2: Array<number> = [5, 6, 7, 8];
 			this._addToContent(numbers.join('|'));
 			this._addToContent(numbers2.reverse().join('-'));
 			this._addSeparator();
@@ -140,13 +140,14 @@ namespace app {
 			// const pairs = new framework.KeyValuePairPrinter([pair1, pair3, pair2]); // TypeScript warns that pair2 does not have the same type signature
 			this._addToContent(pairs.display());
 			this._addSeparator();
-			
+
 			// TOUR: contraining generics
 			const measure1 = { name: "Measure 1", length: 453 };
 			const measure2 = { name: "Measure 2", length: 47 };
+			// const measure2: number[] = [2, 3, 4, 5, 6]; // TypeScript will warn that this is not the same type as measure1
 			this._addToContent(framework.totalLength(measure1, measure2).toString());
 			this._addSeparator();
-			
+
 		}
 
 		_addSeparator(): void {

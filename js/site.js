@@ -94,6 +94,11 @@ var app;
             var pair3 = new framework.KeyValuePair(3, 'Third');
             var pairs = new framework.KeyValuePairPrinter([pair1, pair3]);
             this._addToContent(pairs.display());
+            this._addSeparator();
+            var measure1 = { name: "Measure 1", length: 453 };
+            var measure2 = { name: "Measure 2", length: 47 };
+            this._addToContent(framework.totalLength(measure1, measure2).toString());
+            this._addSeparator();
         };
         Site.prototype._addSeparator = function () {
             this._content += "<hr/>";

@@ -64,4 +64,9 @@ var framework;
         return Person;
     }());
     framework.Person = Person;
+    function totalLength(x, y) {
+        var total = x.length + y.length;
+        return total;
+    }
+    framework.totalLength = totalLength;
 })(framework || (framework = {}));

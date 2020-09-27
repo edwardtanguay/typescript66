@@ -46,4 +46,10 @@ namespace framework {
 		}
 	}
 
+	// TOUR: contraining generics
+	export function totalLength(x: { length: number }, y: { length: number }): number {
+		var total: number = x.length + y.length;
+		return total;
+	}
+
 }

@@ -139,6 +139,14 @@ namespace app {
 			const pairs = new framework.KeyValuePairPrinter([pair1, pair3]);
 			// const pairs = new framework.KeyValuePairPrinter([pair1, pair3, pair2]); // TypeScript warns that pair2 does not have the same type signature
 			this._addToContent(pairs.display());
+			this._addSeparator();
+			
+			// TOUR: contraining generics
+			const measure1 = { name: "Measure 1", length: 453 };
+			const measure2 = { name: "Measure 2", length: 47 };
+			this._addToContent(framework.totalLength(measure1, measure2).toString());
+			this._addSeparator();
+			
 		}
 
 		_addSeparator(): void {

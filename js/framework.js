@@ -39,6 +39,20 @@ var framework;
         return KeyValuePair;
     }());
     framework.KeyValuePair = KeyValuePair;
+    var KeyValuePairPrinter = (function () {
+        function KeyValuePairPrinter(pairs) {
+            this.pairs = pairs;
+        }
+        KeyValuePairPrinter.prototype.display = function () {
+            var r = '';
+            this.pairs.forEach(function (p) {
+                r += "<div>" + p.key + ": " + p.value + "</div>";
+            });
+            return r;
+        };
+        return KeyValuePairPrinter;
+    }());
+    framework.KeyValuePairPrinter = KeyValuePairPrinter;
     var Person = (function () {
         function Person(_firstName, _lastName) {
             this._firstName = _firstName;

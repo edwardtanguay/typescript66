@@ -88,7 +88,12 @@ var app;
             var person = new framework.Person('Pierre', 'Bayle');
             person._firstName = '(unknown)';
             this._addToContent(person.display());
-            console.log(Date.now());
+            this._addSeparator();
+            var pair1 = new framework.KeyValuePair(1, 'First');
+            var pair2 = new framework.KeyValuePair('Second', new Date(Date.now()));
+            var pair3 = new framework.KeyValuePair(3, 'Third');
+            var pairs = new framework.KeyValuePairPrinter([pair1, pair3]);
+            this._addToContent(pairs.display());
         };
         Site.prototype._addSeparator = function () {
             this._content += "<hr/>";

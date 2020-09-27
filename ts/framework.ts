@@ -20,11 +20,22 @@ namespace framework {
 		}
 	}
 
+	// TOUR: generic classes
 	export class KeyValuePair<TKey, TValue> {
 		constructor(
 			public key: TKey,
 			public value: TValue
 		) {}
+	}
+	export class KeyValuePairPrinter<T, U> {
+		constructor(private pairs: KeyValuePair<T, U>[]) { }
+		display(): string {
+			let r = '';
+			this.pairs.forEach(p => {
+				r += `<div>${p.key}: ${p.value}</div>`;
+			});
+			return r;
+		}
 	}
 
 	// TOUR: private/public constructor parameters

@@ -128,11 +128,17 @@ namespace app {
 			// TOUR: private/public constructor parameters
 			const person = new framework.Person('Pierre', 'Bayle');
 			person._firstName = '(unknown)';
-			// person._lastName = '(unknown)'; // typescript warns that this is a private variable
+			// person._lastName = '(unknown)'; // TypeScript warns that this is a private variable
 			this._addToContent(person.display());
+			this._addSeparator();
 
-			// generics key/value
-			console.log(Date.now()); 
+			// TOUR: generic classes
+			const pair1 = new framework.KeyValuePair<number, string>(1, 'First');
+			const pair2 = new framework.KeyValuePair<string, Date>('Second', new Date(Date.now()));
+			const pair3 = new framework.KeyValuePair<number, string>(3, 'Third');
+			const pairs = new framework.KeyValuePairPrinter([pair1, pair3]);
+			// const pairs = new framework.KeyValuePairPrinter([pair1, pair3, pair2]); // TypeScript warns that pair2 does not have the same type signature
+			this._addToContent(pairs.display());
 		}
 
 		_addSeparator(): void {

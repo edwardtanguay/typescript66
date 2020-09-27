@@ -141,7 +141,7 @@ namespace app {
 			this._addToContent(pairs.display());
 			this._addSeparator();
 
-			// TOUR: contraining generics
+			// TOUR: 	
 			const measure1 = { name: "Measure 1", length: 453 };
 			const measure2 = { name: "Measure 2", length: 47 };
 			// const measure2: number[] = [2, 3, 4, 5, 6]; // TypeScript will warn that this is not the same type as measure1

@@ -124,6 +124,9 @@ namespace app {
 			this._addToContent(numbers.join('|'));
 			this._addToContent(numbers2.reverse().join('-'));
 			this._addSeparator();
+
+			// generics key/value
+			console.log(Date.now()); 
 		}
 
 		_addSeparator(): void {

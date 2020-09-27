@@ -85,6 +85,7 @@ var app;
             this._addToContent(numbers.join('|'));
             this._addToContent(numbers2.reverse().join('-'));
             this._addSeparator();
+            console.log(Date.now());
         };
         Site.prototype._addSeparator = function () {
             this._content += "<hr/>";

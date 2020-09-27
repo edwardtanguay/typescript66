@@ -100,7 +100,7 @@ namespace app {
 
 			this._addLine();
 
-			// serialize object
+			// clone object
 			const obj1 = {
 				firstName: 'Jawaharlal',
 				lastName: 'Nehru'
@@ -109,6 +109,12 @@ namespace app {
 			obj2.firstName = '(unknown)';
 			this._content += `<div>obj1.firstName = "${obj1.firstName}"</div>`;
 			this._content += `<div>obj2.firstName = "${obj2.firstName}"</div>`;
+
+			// clone object
+			const name = 'Andy';
+			const name2 = qobj.clone(name);
+			this._content += `<div>obj1.firstName = "${name}"</div>`;
+			this._content += `<div>obj2.firstName = "${name2}"</div>`;
 
 			this._addLine();
 		}

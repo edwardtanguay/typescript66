@@ -11,8 +11,9 @@ namespace qmat {
 }
 
 namespace qobj {
-	export function clone(obj) {
-		let serialized = JSON.stringify(obj);
+	export function clone<T>(value: T): T {
+		console.log(typeof value);
+		let serialized = JSON.stringify(value);
 		return JSON.parse(serialized);
 	}
 }

@@ -75,6 +75,10 @@ var app;
             obj2.firstName = '(unknown)';
             this._content += "<div>obj1.firstName = \"" + obj1.firstName + "\"</div>";
             this._content += "<div>obj2.firstName = \"" + obj2.firstName + "\"</div>";
+            var name = 'Andy';
+            var name2 = qobj.clone(name);
+            this._content += "<div>obj1.firstName = \"" + name + "\"</div>";
+            this._content += "<div>obj2.firstName = \"" + name2 + "\"</div>";
             this._addLine();
         };
         Site.prototype._addLine = function () {

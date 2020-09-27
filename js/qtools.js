@@ -14,8 +14,9 @@ var qmat;
 })(qmat || (qmat = {}));
 var qobj;
 (function (qobj) {
-    function clone(obj) {
-        var serialized = JSON.stringify(obj);
+    function clone(value) {
+        console.log(typeof value);
+        var serialized = JSON.stringify(value);
         return JSON.parse(serialized);
     }
     qobj.clone = clone;

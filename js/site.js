@@ -80,7 +80,10 @@ var app;
             this._addToContent("obj1.firstName = \"" + name + "\"");
             this._addToContent("obj2.firstName = \"" + name2 + "\"");
             this._addSeparator();
-            this._addToContent('test');
+            var numbers = [1, 2, 3, 4];
+            var numbers2 = [5, 6, 7, 8];
+            this._addToContent(numbers.join('|'));
+            this._addToContent(numbers2.reverse().join('-'));
             this._addSeparator();
         };
         Site.prototype._addSeparator = function () {

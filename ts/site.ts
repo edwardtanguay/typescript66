@@ -118,8 +118,11 @@ namespace app {
 
 			this._addSeparator();
 
-			// generic classes
-			this._addToContent('test');
+			// TOUR: an array is actually a generic class
+			const numbers: number[] = [1, 2, 3, 4];
+			const numbers2: Array<number> = [5,6,7,8];
+			this._addToContent(numbers.join('|'));
+			this._addToContent(numbers2.reverse().join('-'));
 			this._addSeparator();
 		}
 

@@ -50,23 +50,23 @@ var app;
             else {
                 this._content += qstr.capitalizeFirstLetter('Status is online.');
             }
-            this._addLine();
+            this._addSeparator();
             this._content += "<ul>";
             var dataSource = new app.DataSource();
             this._quotes.forEach(function (m) {
                 _this._content += "<li style=\"color: " + mainColor + "\">" + m + "</li>";
             });
             this._content += "</ul>";
-            this._addLine();
+            this._addSeparator();
             this._content += dataSource.showFlashcard({ front: 'house', back: 'Haus' });
             this._content += dataSource.showFlashcard({ front: 'mouse', back: 'Maus' });
-            this._addLine();
+            this._addSeparator();
             this._content += "The score is " + score + ".";
-            this._addLine();
+            this._addSeparator();
             this._content += "Number of quotes = " + this._quotes.length;
-            this._addLine();
+            this._addSeparator();
             this._content += "The version of the dataSource is <code>" + app.DataSource.getVersion() + "</code>, retrieved from a static method.";
-            this._addLine();
+            this._addSeparator();
             var obj1 = {
                 firstName: 'Jawaharlal',
                 lastName: 'Nehru'
@@ -79,9 +79,11 @@ var app;
             var name2 = qobj.clone(name);
             this._content += "<div>obj1.firstName = \"" + name + "\"</div>";
             this._content += "<div>obj2.firstName = \"" + name2 + "\"</div>";
-            this._addLine();
+            this._addSeparator();
+            this._content += "<div>obj2.firstName = \"" + name2 + "\"</div>";
+            this._addSeparator();
         };
-        Site.prototype._addLine = function () {
+        Site.prototype._addSeparator = function () {
             this._content += "<hr/>";
         };
         Site.prototype._loadData = function () {

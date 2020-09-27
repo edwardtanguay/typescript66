@@ -11,6 +11,8 @@ namespace qmat {
 }
 
 namespace qobj {
+
+	// TOUR: function with generics
 	export function clone<T>(value: T): T {
 		console.log(typeof value);
 		let serialized = JSON.stringify(value);

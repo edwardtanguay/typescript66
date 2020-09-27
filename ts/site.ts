@@ -72,7 +72,7 @@ namespace app {
 				this._content += qstr.capitalizeFirstLetter('Status is online.');
 			}
 
-			this._addLine();
+			this._addSeparator();
 
 			this._content += `<ul>`;
 			const dataSource = new DataSource();
@@ -81,24 +81,24 @@ namespace app {
 			});
 			this._content += `</ul>`;
 
-			this._addLine();
+			this._addSeparator();
 
 			this._content += dataSource.showFlashcard({ front: 'house', back: 'Haus' });
 			this._content += dataSource.showFlashcard({ front: 'mouse', back: 'Maus' });
 
-			this._addLine();
+			this._addSeparator();
 
 			this._content += `The score is ${score}.`;
 
-			this._addLine();
+			this._addSeparator();
 
 			this._content += `Number of quotes = ${this._quotes.length}`;
 
-			this._addLine();
+			this._addSeparator();
 
 			this._content += `The version of the dataSource is <code>${DataSource.getVersion()}</code>, retrieved from a static method.`;
 
-			this._addLine();
+			this._addSeparator();
 
 			// clone object
 			const obj1 = {
@@ -110,16 +110,21 @@ namespace app {
 			this._content += `<div>obj1.firstName = "${obj1.firstName}"</div>`;
 			this._content += `<div>obj2.firstName = "${obj2.firstName}"</div>`;
 
-			// clone object
+			// TOUR: using function with generics
 			const name = 'Andy';
 			const name2 = qobj.clone(name);
 			this._content += `<div>obj1.firstName = "${name}"</div>`;
 			this._content += `<div>obj2.firstName = "${name2}"</div>`;
 
-			this._addLine();
+			this._addSeparator();
+
+			// generic classes
+			this._content += `<div>obj2.firstName = "${name2}"</div>`;
+
+			this._addSeparator();
 		}
 
-		_addLine(): void {
+		_addSeparator(): void {
 			this._content += `<hr/>`;
 		}
 

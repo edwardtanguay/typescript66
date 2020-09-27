@@ -9,3 +9,10 @@ namespace qmat {
 		return Math.floor(Math.random() * end) + start;
 	}
 }
+
+namespace qobj {
+	export function clone(obj) {
+		let serialized = JSON.stringify(obj);
+		return JSON.parse(serialized);
+	}
+}

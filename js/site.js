@@ -67,6 +67,15 @@ var app;
             this._addLine();
             this._content += "The version of the dataSource is <code>" + app.DataSource.getVersion() + "</code>, retrieved from a static method.";
             this._addLine();
+            var obj1 = {
+                firstName: 'Jawaharlal',
+                lastName: 'Nehru'
+            };
+            var obj2 = qobj.clone(obj1);
+            obj2.firstName = '(unknown)';
+            this._content += "<div>obj1.firstName = \"" + obj1.firstName + "\"</div>";
+            this._content += "<div>obj2.firstName = \"" + obj2.firstName + "\"</div>";
+            this._addLine();
         };
         Site.prototype._addLine = function () {
             this._content += "<hr/>";

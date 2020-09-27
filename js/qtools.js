@@ -12,3 +12,11 @@ var qmat;
     }
     qmat.getRandomNumber = getRandomNumber;
 })(qmat || (qmat = {}));
+var qobj;
+(function (qobj) {
+    function clone(obj) {
+        var serialized = JSON.stringify(obj);
+        return JSON.parse(serialized);
+    }
+    qobj.clone = clone;
+})(qobj || (qobj = {}));

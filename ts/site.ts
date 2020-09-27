@@ -99,6 +99,18 @@ namespace app {
 			this._content += `The version of the dataSource is <code>${DataSource.getVersion()}</code>, retrieved from a static method.`;
 
 			this._addLine();
+
+			// serialize object
+			const obj1 = {
+				firstName: 'Jawaharlal',
+				lastName: 'Nehru'
+			}
+			const obj2 = qobj.clone(obj1);
+			obj2.firstName = '(unknown)';
+			this._content += `<div>obj1.firstName = "${obj1.firstName}"</div>`;
+			this._content += `<div>obj2.firstName = "${obj2.firstName}"</div>`;
+
+			this._addLine();
 		}
 
 		_addLine(): void {

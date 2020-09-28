@@ -141,11 +141,18 @@ namespace app {
 			this._addToContent(pairs.display());
 			this._addSeparator();
 
-			// TOUR: 	
+			// TOUR: use generics
 			const measure1 = { name: "Measure 1", length: 453 };
 			const measure2 = { name: "Measure 2", length: 47 };
 			// const measure2: number[] = [2, 3, 4, 5, 6]; // TypeScript will warn that this is not the same type as measure1
 			this._addToContent(framework.totalLength(measure1, measure2).toString());
+			this._addSeparator();
+
+			// TOUR: use interfaces
+			const flashcard1 = new Flashcard('car', 'Auto');
+			this._addToContent(flashcard1.displayAsFlashcard());
+			const book1 = new Book('Imaginary Conversations and Poems', ' The language is amazing, it is like a good glass of Syrah, that is just a couple of degrees below room temperature.', 'Walter Savage Landor');
+			this._addToContent(book1.displayAsFlashcard());
 			this._addSeparator();
 
 		}

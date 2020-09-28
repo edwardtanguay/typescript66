@@ -30,6 +30,46 @@ var app;
     }());
     app.DataSource = DataSource;
 })(app || (app = {}));
+var Flashcard = (function () {
+    function Flashcard(front, back) {
+        this.front = '';
+        this.back = '';
+        this.front = front;
+        this.back = back;
+    }
+    Flashcard.prototype.displayAsFlashcard = function () {
+        return this.front + ' / ' + this.back;
+    };
+    return Flashcard;
+}());
+var Book = (function () {
+    function Book(title, description, author) {
+        this.title = '';
+        this.description = '';
+        this.author = '';
+        this.title = title;
+        this.description = description;
+        this.author = author;
+    }
+    Object.defineProperty(Book.prototype, "front", {
+        get: function () {
+            return this.title;
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(Book.prototype, "back", {
+        get: function () {
+            return this.author;
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Book.prototype.displayAsFlashcard = function () {
+        return 'BOOK: ' + this.front + ' / AUTHOR: ' + this.back;
+    };
+    return Book;
+}());
 var framework;
 (function (framework) {
     framework.siteLoader = function (option) {
@@ -233,6 +273,11 @@ var app;
             var measure1 = { name: "Measure 1", length: 453 };
             var measure2 = { name: "Measure 2", length: 47 };
             this._addToContent(framework.totalLength(measure1, measure2).toString());
+            this._addSeparator();
+            var flashcard1 = new Flashcard('car', 'Auto');
+            this._addToContent(flashcard1.displayAsFlashcard());
+            var book1 = new Book('Imaginary Conversations and Poems', ' The language is amazing, it is like a good glass of Syrah, that is just a couple of degrees below room temperature.', 'Walter Savage Landor');
+            this._addToContent(book1.displayAsFlashcard());
             this._addSeparator();
         };
         Site.prototype._addSeparator = function () {

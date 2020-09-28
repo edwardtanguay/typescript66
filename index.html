@@ -11,14 +11,11 @@
 
 <body>
 	<div id="content">There was an error, check browser console.</div>
-	<script src="js/framework.js"></script>
-	<script src="js/dataSource.js"></script>
-	<script src="js/qtools.js"></script>
-	<script src="js/schemas.js"></script>
-	<script src="js/site.js"></script>
+	<script src="js/bundle.js"></script>
 	<script>
 		(function () {
-			var site = framework.siteLoader("deleteThisToDevelopSite");
+			//var site = framework.siteLoader("deleteThisToDevelopSite");
+			var site = framework.siteLoader("");
 			document.getElementById('content').innerHTML = site.content;
 			document.getElementById('title').innerHTML = site.title;
 		}()); 

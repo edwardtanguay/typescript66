@@ -11,7 +11,7 @@ namespace app {
 		get content() { return this._content; }
 
 		constructor() {
-			this._title = 'TypeScript/SASS Site';
+			this._title = 'TypeScript/SASS Site'; 
 			this._content = '';
 			this._loadData();
 			this.buildContent();

@@ -1,5 +1,140 @@
 var app;
 (function (app) {
+    var DataSource = (function () {
+        function DataSource() {
+        }
+        DataSource.prototype.getQuotes = function () {
+            return [
+                'this one',
+                'that one',
+                'another one',
+                'fourth one',
+                'fifth one',
+                'sixth',
+                'seven'
+            ];
+        };
+        DataSource.prototype.showFlashcard = function (flashcard) {
+            return "<div>" + flashcard.front + " <=> " + flashcard.back + "</div>";
+        };
+        DataSource.prototype.getFlashcard = function () {
+            return {
+                front: 'fff',
+                back: 'bbb'
+            };
+        };
+        DataSource.getVersion = function () {
+            return '0.0.1';
+        };
+        return DataSource;
+    }());
+    app.DataSource = DataSource;
+})(app || (app = {}));
+var framework;
+(function (framework) {
+    framework.siteLoader = function (option) {
+        if (option === void 0) { option = ''; }
+        if (option === '') {
+            var site = new app.Site();
+            return site;
+        }
+        else {
+            var site = new framework.StartSite();
+            return site;
+        }
+    };
+    var StartSite = (function () {
+        function StartSite() {
+        }
+        Object.defineProperty(StartSite.prototype, "title", {
+            get: function () {
+                return 'Welcome';
+            },
+            enumerable: false,
+            configurable: true
+        });
+        Object.defineProperty(StartSite.prototype, "content", {
+            get: function () {
+                return 'Welcome to this site.';
+            },
+            enumerable: false,
+            configurable: true
+        });
+        return StartSite;
+    }());
+    framework.StartSite = StartSite;
+    var KeyValuePair = (function () {
+        function KeyValuePair(key, value) {
+            this.key = key;
+            this.value = value;
+        }
+        return KeyValuePair;
+    }());
+    framework.KeyValuePair = KeyValuePair;
+    var KeyValuePairPrinter = (function () {
+        function KeyValuePairPrinter(pairs) {
+            this.pairs = pairs;
+        }
+        KeyValuePairPrinter.prototype.display = function () {
+            var r = '';
+            this.pairs.forEach(function (p) {
+                r += "<div>" + p.key + ": " + p.value + "</div>";
+            });
+            return r;
+        };
+        return KeyValuePairPrinter;
+    }());
+    framework.KeyValuePairPrinter = KeyValuePairPrinter;
+    var Person = (function () {
+        function Person(_firstName, _lastName) {
+            this._firstName = _firstName;
+            this._lastName = _lastName;
+        }
+        Person.prototype.display = function () {
+            return "PERSON: \"" + this._lastName + ", " + this._firstName + "\"";
+        };
+        return Person;
+    }());
+    framework.Person = Person;
+    function totalLength(x, y) {
+        var total = x.length + y.length;
+        return total;
+    }
+    framework.totalLength = totalLength;
+})(framework || (framework = {}));
+var qstr;
+(function (qstr) {
+    function capitalizeFirstLetter(line) {
+        return line.charAt(0).toUpperCase() + line.slice(1);
+    }
+    qstr.capitalizeFirstLetter = capitalizeFirstLetter;
+})(qstr || (qstr = {}));
+var qmat;
+(function (qmat) {
+    function getRandomNumber(start, end) {
+        return Math.floor(Math.random() * end) + start;
+    }
+    qmat.getRandomNumber = getRandomNumber;
+})(qmat || (qmat = {}));
+var qobj;
+(function (qobj) {
+    function clone(value) {
+        console.log(typeof value);
+        var serialized = JSON.stringify(value);
+        return JSON.parse(serialized);
+    }
+    qobj.clone = clone;
+})(qobj || (qobj = {}));
+var app;
+(function (app) {
+    var Status;
+    (function (Status) {
+        Status[Status["Online"] = 0] = "Online";
+        Status[Status["Offline"] = 1] = "Offline";
+    })(Status = app.Status || (app.Status = {}));
+})(app || (app = {}));
+var app;
+(function (app) {
     var Site = (function () {
         function Site() {
             this._title = 'TypeScript/SASS Site';

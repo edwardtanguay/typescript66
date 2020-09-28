@@ -5,12 +5,8 @@ interface IFlashcard {
 }
 
 class Flashcard implements IFlashcard {
-	public front: string = '';
-	public back: string = '';
 
-	constructor(front: string, back: string) {
-		this.front = front;
-		this.back = back;
+	constructor(public front: string, public back: string) {
 	}
 
 	displayAsFlashcard() {
@@ -19,14 +15,8 @@ class Flashcard implements IFlashcard {
 }
 
 class Book implements IFlashcard {
-	public title: string = '';
-	public description: string = '';
-	public author: string = '';
 
-	constructor(title: string, description: string, author: string) {
-		this.title = title;
-		this.description = description;
-		this.author = author;
+	constructor(public title: string, public description: string, public author: string) {
 	}
 
 	get front() {

@@ -32,8 +32,6 @@ var app;
 })(app || (app = {}));
 var Flashcard = (function () {
     function Flashcard(front, back) {
-        this.front = '';
-        this.back = '';
         this.front = front;
         this.back = back;
     }
@@ -44,9 +42,6 @@ var Flashcard = (function () {
 }());
 var Book = (function () {
     function Book(title, description, author) {
-        this.title = '';
-        this.description = '';
-        this.author = '';
         this.title = title;
         this.description = description;
         this.author = author;

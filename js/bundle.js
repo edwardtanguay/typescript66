@@ -143,6 +143,10 @@ var qstr;
         return line.charAt(0).toUpperCase() + line.slice(1);
     }
     qstr.capitalizeFirstLetter = capitalizeFirstLetter;
+    function isString(line) {
+        return 'string' === typeof line;
+    }
+    qstr.isString = isString;
 })(qstr || (qstr = {}));
 var qmat;
 (function (qmat) {
@@ -274,6 +278,19 @@ var app;
             var book1 = new Book('Imaginary Conversations and Poems', ' The language is amazing, it is like a good glass of Syrah, that is just a couple of degrees below room temperature.', 'Walter Savage Landor');
             this._addToContent(book1.displayAsFlashcard());
             this._addSeparator();
+            var items = ['nnn', 34];
+            for (var _i = 0, items_1 = items; _i < items_1.length; _i++) {
+                var item = items_1[_i];
+                if (qstr.isString(item)) {
+                    this._addToContent('it is a string');
+                }
+                else {
+                    this._addToContent('it is NOT a string');
+                }
+            }
+            var lines = ['aaa', 'bbb', 'ccc'];
+            var theItems = ['begin', 2343];
+            console.log(theItems);
         };
         Site.prototype._addSeparator = function () {
             this._content += "<hr/>";

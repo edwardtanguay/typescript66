@@ -11,7 +11,7 @@ namespace app {
 		get content() { return this._content; }
 
 		constructor() {
-			this._title = 'TypeScript/SASS Site'; 
+			this._title = 'TypeScript/SASS Site';
 			this._content = '';
 			this._loadData();
 			this.buildContent();
@@ -154,6 +154,21 @@ namespace app {
 			const book1 = new Book('Imaginary Conversations and Poems', ' The language is amazing, it is like a good glass of Syrah, that is just a couple of degrees below room temperature.', 'Walter Savage Landor');
 			this._addToContent(book1.displayAsFlashcard());
 			this._addSeparator();
+
+			// TOUR: type "unknown" (see qstr.isString())
+			const items: any[] = ['nnn', 34];
+			for (const item of items) {
+				if (qstr.isString(item)) {
+					this._addToContent('it is a string');
+				} else {
+					this._addToContent('it is NOT a string');
+				}
+			}
+			
+			// TOUR: tuples
+			const lines: string[] = ['aaa', 'bbb', 'ccc'];
+			const theItems: [string, number] = ['begin', 2343];
+			console.log(theItems);
 
 		}
 

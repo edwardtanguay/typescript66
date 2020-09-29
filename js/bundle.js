@@ -239,7 +239,7 @@ var app;
             this._addSeparator();
             this._addToContent("Number of quotes = " + this._quotes.length);
             this._addSeparator();
-            this._addToContent("The version of the dataSource is <code>" + app.DataSource.getVersion() + "</code>, retrieved from a static method.");
+            this._addToContent("The version of the dataSource is <b>" + app.DataSource.getVersion() + "</b>, retrieved from a static method.");
             this._addSeparator();
             var obj1 = {
                 firstName: 'Jawaharlal',

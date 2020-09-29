@@ -96,7 +96,7 @@ namespace app {
 
 			this._addSeparator();
 
-			this._addToContent(`The version of the dataSource is <code>${DataSource.getVersion()}</code>, retrieved from a static method.`);
+			this._addToContent(`The version of the dataSource is <b>${DataSource.getVersion()}</b>, retrieved from a static method.`);
 
 			this._addSeparator();
 

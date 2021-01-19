@@ -2,7 +2,7 @@
 
 Develop minimal single-page app in Visual Studio with TypeScript and SASS, but no complicated Webpack, etc.
 
-**Technologies:**
+## Technologies:
 
 - HTML
 - CSS

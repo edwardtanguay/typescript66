@@ -54,6 +54,6 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 
 This project uses the [MIT License](https://choosealicense.com/licenses/mit). Feel free to use, change, share, and distribute freely.
 
-## More mini-frameworks like this here:
+## Discover more mini-frameworks like this here:
 
 http://onespace.netlify.app/miniframeworks

@@ -22,8 +22,9 @@ Develop minimal single-page app in Visual Studio with TypeScript and SASS, but n
 **Uses:**
 - learn and practice TypeScript and SASS
 - fast-loading, display-only, JSON-based data sites
+- no HTTP server needed, just open index.html or use live-server
 
-## One-time setup
+## Setup
 - `npm install -g live-server`
 - `npm i -g typescript`
 - `npm i -g node-sass`
@@ -36,10 +37,11 @@ Develop minimal single-page app in Visual Studio with TypeScript and SASS, but n
 - in `index.html`, delete parameter from this line: `var site = siteLoader("deleteThisToDevelopSite");`
 - start developing in `ts/site.ts` and `scss/main.scss` 
 
-## Upcoming features
+## Add features
 - add Bootstrap 4 (via CDN)
 - add Vue.js for interaction
 - make site responsive by default
+- add JSON reading/writing
 
 ## Current Developers
 

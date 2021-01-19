@@ -1,26 +1,26 @@
 # typescript66
 
-Develop minimal single-page app in Visual Studio with TypeScript and SASS, but no complicated Webpack, etc.
+Minimal single-page app to learn TypeScript and SASS, but no complicated Webpack, etc.
 
 ## Technologies:
 
 - HTML
-- CSS
 - TypeScript
+- SASS
 
-**Characteristics:**
+## Characteristics:
 - extremely small footprint
 - single-page application
 - TypeScript (bundled to one file)
 - SASS
-- no web server required, can run as file in browser
+- **no web server required, can run as file in browser**
 - no npm
 - no Webpack
 - no JavaScript framework like Vue or React
 - no templating (send HTML as output)
 
-**Uses:**
-- learn and practice TypeScript and SASS
+## Uses:
+- learn, teach and practice TypeScript and SASS
 - fast-loading, display-only, JSON-based data sites
 - no HTTP server needed, just open index.html or use live-server
 
@@ -45,7 +45,7 @@ Develop minimal single-page app in Visual Studio with TypeScript and SASS, but n
 
 ## Current Developers
 
-* Edward Tanguay - https://github.com/edwardtanguay
+- Edward Tanguay - https://github.com/edwardtanguay
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
